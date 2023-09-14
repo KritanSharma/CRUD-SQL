@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const Add = () => {
   const [book, setBooks] = useState({
     title: "",
@@ -27,6 +28,10 @@ const Add = () => {
 
   console.log(book);
   return (
+    <div className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+    <h1>Dark Mode Toggle Example</h1>
+    <DarkModeToggle />
+  
     <div className="form">
       <h2>Add New Books</h2>
       <input
@@ -56,7 +61,8 @@ const Add = () => {
       <button className="addButton" onClick={handleClick}>
         Add
       </button>
-    </div>
+      </div>
+     </div>
   );
 };
 
